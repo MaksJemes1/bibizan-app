@@ -6,35 +6,30 @@
     <title>BibizanVPN</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
-        body { background: #1c1c1c; color: white; font-family: sans-serif; text-align: center; padding: 20px; }
-        .logo { font-size: 40px; margin-bottom: 10px; }
-        .status { color: #00ff00; font-weight: bold; margin-bottom: 30px; }
-        button { background: #0088cc; border: none; color: white; padding: 15px 30px; border-radius: 10px; font-size: 18px; width: 100%; cursor: pointer; }
-        .price { margin-top: 20px; font-size: 14px; color: #aaaaaa; }
+        body { background: #121212; color: white; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 20px; }
+        .card { background: #1e1e1e; padding: 25px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        h1 { color: #0088cc; margin-top: 0; }
+        .status { color: #00ff00; font-size: 14px; margin-bottom: 20px; }
+        button { background: #0088cc; border: none; color: white; padding: 15px; border-radius: 12px; font-size: 16px; font-weight: bold; width: 100%; cursor: pointer; transition: 0.3s; }
+        button:active { transform: scale(0.98); background: #0077b5; }
     </style>
 </head>
 <body>
-    <div class="logo">🧪</div>
-    <h1>BibizanVPN</h1>
-    <p class="status">● Сервер работает стабильно</p>
-    
-    <div style="background: #2b2b2b; padding: 20px; border-radius: 15px;">
-        <p>Твой тариф: <b>Пробный</b></p>
-        <button onclick="Telegram.WebApp.close()">Вернуться в чат</button>
+    <div class="card">
+        <h1>BibizanVPN 🐒</h1>
+        <p class="status">● Сервер: Нидерланды (Активен)</p>
+        <p>Нажми кнопку ниже, чтобы получить свой персональный ключ доступа.</p>
+        <button onclick="sendData()">🚀 Получить настройки</button>
     </div>
 
-    <p class="price">Подписка: 200 руб / мес</p>
+    <script>
+        const tg = window.Telegram.WebApp;
+        tg.expand();
 
-<script>
-    const tg = window.Telegram.WebApp;
-    tg.expand();
-
-    function sendData() {
-        // Проверь, чтобы тут было именно "get_my_key"
-        tg.sendData("get_my_key"); 
-    }
-</script>
-
-<button onclick="sendData()">🚀 Получить настройки</button>
+        function sendData() {
+            // Важно: отправляем именно эту строку
+            tg.sendData("get_my_key"); 
+        }
+    </script>
 </body>
 </html>
