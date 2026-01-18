@@ -29,11 +29,12 @@
     const tg = window.Telegram.WebApp;
     tg.expand();
 
-    // Эта функция отправит боту команду, когда нажмут на кнопку
     function sendData() {
-        tg.sendData("get_my_key"); // Бот получит этот текст
-        tg.close(); // Закрываем Mini App
+        // Проверь, чтобы тут было именно "get_my_key"
+        tg.sendData("get_my_key"); 
     }
 </script>
+
+<button onclick="sendData()">🚀 Получить настройки</button>
 </body>
 </html>
