@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="logo">🧪</div>
-    <h1>LaborantVPN</h1>
+    <h1>BibizanVPN</h1>
     <p class="status">● Сервер работает стабильно</p>
     
     <div style="background: #2b2b2b; padding: 20px; border-radius: 15px;">
@@ -25,10 +25,15 @@
 
     <p class="price">Подписка: 200 руб / мес</p>
 
-    <script>
-        // Инициализация Telegram Mini App
-        const tg = window.Telegram.WebApp;
-        tg.expand(); // Развернуть на весь экран
-    </script>
+<script>
+    const tg = window.Telegram.WebApp;
+    tg.expand();
+
+    // Эта функция отправит боту команду, когда нажмут на кнопку
+    function sendData() {
+        tg.sendData("get_my_key"); // Бот получит этот текст
+        tg.close(); // Закрываем Mini App
+    }
+</script>
 </body>
 </html>
